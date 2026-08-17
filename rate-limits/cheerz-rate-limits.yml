@@ -1,0 +1,15 @@
+generated: '2026-08-17'
+method: searched
+source: https://www.cheerz.com/robots.txt
+limit_count: 0
+note: >-
+  No published rate limits, because there is no published API to limit. Cheerz has no developer
+  portal, no API reference and no machine-readable contract on any host it controls, so there is
+  no documented request quota, window, burst allowance, 429 behaviour or RateLimit-* response
+  header to record. The only rate-shaped signal Cheerz publishes at all is crawler policy in
+  robots.txt, which Disallows /*/api/* — the internal JSON backend its own SPA and mobile apps
+  call. That is an instruction to crawlers, not a rate limit, and the endpoints behind it are not
+  documented for third parties, so nothing from it is recorded as a limit here. limit_count is 0
+  as an honest zero.
+headers: []
+limits: []

@@ -1,0 +1,74 @@
+generated: '2026-08-17'
+method: probed
+source: >-
+  Anonymous HTTPS GETs of the RFC 8615 well-known registry paths against every host
+  Cheerz operates that is reachable without credentials: the production storefront
+  (www.cheerz.com) and the Zendesk-hosted help centre (support.cheerz.com). No
+  api./developer./docs. host exists for Cheerz — those names do not resolve in DNS.
+note: >-
+  EVERY probed path returned 404. This file records a verified ABSENCE, not a presence:
+  no WellKnown and no SecurityTxt pointer is emitted in apis.yml, because Cheerz serves
+  none of these documents. The storefront answers a real 404 body (3,133 bytes, "<!-- 404 -->")
+  rather than a soft-200 SPA catch-all, so these are genuine misses and not shell false
+  positives. /api-docs on www.cheerz.com does return HTTP 200, but it is the Google-OAuth
+  login screen for the internal "Cheerz Admin" back office — an employee tool, not an API
+  reference and not a well-known document — so it is recorded here as a miss too.
+hosts:
+- host: www.cheerz.com
+  role: production storefront (Vite SPA, assets on cdn2.chrzz.com)
+  paths:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: support.cheerz.com
+  role: Zendesk help centre (CNAME printklub.zendesk.com)
+  paths:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+summary:
+  hosts_probed: 2
+  paths_probed: 14
+  documents_found: 0
+  security_txt: false
+  openid_configuration: false
+  oauth_authorization_server: false
+  api_catalog: false
+  ai_plugin: false
+  agent_card: false

@@ -1,0 +1,22 @@
+generated: '2026-08-17'
+method: searched
+source: https://www.cheerz.com/en
+docs: https://www.cheerz.com/en/terms-and-conditions
+plan_count: 0
+note: >-
+  Cheerz publishes NO API plans, because Cheerz publishes no API. It is a direct-to-consumer
+  photo-printing retailer: pricing is per physical product (prints, magnets, photo books,
+  calendars, canvases, frames, the Cheerz Box) and is quoted inside each product page and the
+  checkout flow, not as subscription tiers with quotas, overage or rate allowances. There is no
+  developer plan, no free tier, no metered API pricing and no "contact sales" API pricing gate —
+  the whole 418-URL English sitemap is products, categories, collections and four legal pages.
+  plan_count is 0 as an honest zero, recorded rather than omitted so a reader can tell the
+  difference between "checked, none published" and "never checked".
+surface: consumer-ecommerce
+billing_model: per-order retail purchase of physical goods
+storefront_locales:
+- fr
+- es
+- it
+- en
+plans: []

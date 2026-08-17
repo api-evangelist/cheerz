@@ -1,7 +1,18 @@
 aid: cheerz
 name: Cheerz
-description: 'Cheerz is a company surfaced as a portfolio company of serena and added to the API Evangelist
-  network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  Cheerz is a French direct-to-consumer photo-printing brand. Customers pick photos from their
+  phone camera roll or a connected cloud gallery in the Cheerz iOS/Android app or on cheerz.com,
+  and Cheerz prints and ships the result as photo prints, fridge magnets, photo books and albums,
+  wall canvases, framed prints and posters, calendars including advent calendars, puzzles,
+  greeting and invitation cards, and the branded Cheerz Box and Memory Box gift formats. Founded
+  in Paris in 2012 under the legal entity Printklub, backed by Serena Capital and Iron Capital,
+  and acquired by the German photo-finishing group CEWE Stiftung & Co. KGaA in February 2018 for
+  roughly EUR 45 million; it continues to operate as CEWE's Paris site. Cheerz publishes no public
+  API, developer portal, SDK or machine-readable contract of any kind — it is an end-user retail
+  product, and partnership, bulk-order and affiliate enquiries are handled by a human contact
+  channel rather than a developer programme.
+image: https://avatars.githubusercontent.com/u/2437868?v=4
 url: https://raw.githubusercontent.com/api-evangelist/cheerz/refs/heads/main/apis.yml
 x-type: company
 x-source: serena-portfolio
@@ -13,6 +24,12 @@ modified: '2026-08-17'
 tags:
 - Company
 - Consumer
+- Photo Printing
+- E-Commerce
+- Personalized Gifts
+- Mobile Commerce
+- Print On Demand
+- France
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,5 +37,104 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/cheerz-domain-security.yml
+- type: WellKnownProbe
+  url: well-known/cheerz-well-known.yml
+  note: >-
+    Deliberately NOT typed `WellKnown` or `SecurityTxt`. All 14 /.well-known/ probes across
+    www.cheerz.com and support.cheerz.com returned 404; the file documents an absence, and a
+    canonical pointer would assert Cheerz serves a discovery surface it does not.
+- type: Plans
+  url: plans/cheerz-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/cheerz-rate-limits.yml
+- type: LLMsTxt
+  url: llms/cheerz-llms.txt
 - type: Website
-  url: http://www.cheerz.com/
+  url: https://www.cheerz.com/en
+- type: HelpCenter
+  url: https://support.cheerz.com/hc/fr
+- type: Contact
+  url: https://www.cheerz.com/en/contact-us
+- type: Blog
+  url: https://www.cheerz.com/fr/blog/
+- type: GitHubOrganization
+  url: https://github.com/cheerz
+- type: TermsOfService
+  url: https://www.cheerz.com/en/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.cheerz.com/en/privacy-policy
+- type: Legal
+  url: https://www.cheerz.com/en/legal
+- type: CodeOfConduct
+  url: https://www.cheerz.com/en/code-of-conduct
+- type: iOSApp
+  url: https://apps.apple.com/us/app/cheerz-photo-printing/id690875126
+- type: AndroidApp
+  url: https://play.google.com/store/apps/details?id=com.printklub.polabox
+- type: ParentCompany
+  url: https://www.cewe-group.com/en/about-us/corporate-group/sites/paris-site-cheerz.html
+- type: IntegrationModel
+  data:
+  - name: No Public Developer API
+    description: >-
+      Cheerz publishes no public API, developer portal, API reference, SDK or machine-readable
+      contract. Probed 2026-08-17: /openapi.json, /openapi.yaml, /swagger.json, /docs, /api,
+      /graphql, /developers and /developer all 404 on www.cheerz.com; no api., developer.,
+      developers., docs., partners., status., pro. or mcp. subdomain of cheerz.com resolves in
+      DNS; all 14 /.well-known/* probes across www.cheerz.com and support.cheerz.com returned
+      404. /api-docs returns HTTP 200 but is the Google-OAuth login for the internal "Cheerz
+      Admin" back office, not an API reference. robots.txt Disallows /*/api/*, the private JSON
+      backend the Cheerz SPA and mobile apps call — undocumented, not offered to third parties,
+      and deliberately NOT recorded here as an API surface. This entry documents the ABSENCE of
+      a published contract; it does not carry the canonical Authentication or WellKnown types,
+      which would credit Cheerz with surfaces it does not publish.
+- type: Products
+  data:
+  - name: Photo Prints
+    description: Prints in multiple formats with optional coloured borders and finish choices.
+  - name: Magnets
+    description: Photo fridge magnets, including writable variants.
+  - name: Photo Books and Albums
+    description: Hardcover, softcover, mini and DIY/scrapbook albums.
+  - name: Wall Decor
+    description: Canvases (classic and retro), framed prints, posters and pele-mele arrangements.
+  - name: Calendars
+    description: A3/A4 portrait and landscape, 30x45 and advent calendars.
+  - name: Cards
+    description: Greeting and invitation cards, including a photo-and-video card.
+  - name: Puzzles
+    description: Photo puzzles in several sizes.
+  - name: Cheerz Box and Memory Box
+    description: Branded curated photo gift boxes.
+x-enrichment:
+  date: '2026-08-17'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Cheerz is a consumer photo-printing retailer with no developer surface of any kind — the only
+    HTTP 200 on any API-shaped path is www.cheerz.com/api-docs, which is the Google-OAuth sign-in
+    screen for the internal "Cheerz Admin" back office rather than an API reference, no api. or
+    developer. or docs. subdomain of cheerz.com resolves in DNS, the 418-URL English and 464-URL
+    French sitemaps contain nothing but products, categories, collections, blog posts and four
+    legal pages, robots.txt Disallows the /*/api/* private JSON backend its own SPA and mobile
+    apps call, and no first-party client library exists on npm, PyPI, RubyGems or Packagist.
+  evidence:
+  - url: https://www.cheerz.com/openapi.json
+    status: 404
+  - url: https://www.cheerz.com/developers
+    status: 404
+  - url: https://www.cheerz.com/graphql
+    status: 404
+  - url: https://www.cheerz.com/api-docs
+    status: 200
+  - url: https://www.cheerz.com/.well-known/agent-card.json
+    status: 404
+  - url: https://support.cheerz.com/.well-known/security.txt
+    status: 404
+  checked: '2026-08-17'
