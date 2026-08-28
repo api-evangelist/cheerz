@@ -12,6 +12,17 @@ description: >-
   API, developer portal, SDK or machine-readable contract of any kind — it is an end-user retail
   product, and partnership, bulk-order and affiliate enquiries are handled by a human contact
   channel rather than a developer programme.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://avatars.githubusercontent.com/u/2437868?v=4
 url: https://raw.githubusercontent.com/api-evangelist/cheerz/refs/heads/main/apis.yml
 x-type: company
