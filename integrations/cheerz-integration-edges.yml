@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/cheerz/integrations
+- https://n8n.io/integrations/cheerz/
+- https://composio.dev/toolkits/cheerz
+- https://monid.ai/tools/cheerz
+checked:
+- https://composio.dev/toolkits/cheerz
+- https://monid.ai/tools/cheerz
+- https://n8n.io/integrations/cheerz/
+- https://zapier.com/apps/cheerz/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
